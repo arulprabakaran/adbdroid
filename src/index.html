@@ -1,25 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>adbDroid</title>
+    <meta
+      name="viewport"
+      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <link href="index.css" rel="stylesheet" />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <title>Ionic App</title>
+  <body>
+    <header>
+      <div class="app-name">ADB Droid</div>
 
-  <base href="/" />
+      <div class="device-selector-wrapper">
+        <div class="device-selector">
+          <span id="current-device">Device 1</span>
+          <ul id="device-list">
+            <li>
+              Device 1
+            </li>
+            <li>
+              Device 2
+            </li>
+            <li>
+              Device 3
+            </li>
+          </ul>
+        </div>
+      </div>
 
-  <meta name="viewport" content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="format-detection" content="telephone=no" />
-  <meta name="msapplication-tap-highlight" content="no" />
+      <div class="window-button">
+        <ul>
+          <li id="minimize"></li>
+          <li id="close"></li>
+        </ul>
+      </div>
+    </header>
 
-  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+    <section>
+      <ul>
+        <li>
+          <div id="screenshot" class="action">
+            <img src="images/camera.svg" />
+          </div>
+          <span>Snap</span>
+        </li>
+        <li>
+          <div id="screenshot" class="action">
+            <img src="images/video.svg" />
+          </div>
+          <span>Record</span>
+        </li>
+        <li>
+          <div id="screenshot" class="action">
+            <img src="images/folder.svg" />
+          </div>
+          <span>Browse</span>
+        </li>
+      </ul>
+    </section>
 
-  <!-- add to homescreen for ios -->
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-</head>
-
-<body>
-  <app-root></app-root>
-</body>
-
+    <script src="index.js" type="text/javascript"></script>
+  </body>
 </html>
