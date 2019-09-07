@@ -35,6 +35,7 @@ const createMainWindow = async () => {
     show: false,
     width: 760,
     height: 520,
+    icon: path.join(__dirname, "src/images/icon.ico"),
     transparent: true,
     frame: false,
     resizable: false,
