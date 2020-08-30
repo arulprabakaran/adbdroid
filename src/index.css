@@ -51,11 +51,16 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
-  background: #1b1a1f;
+  background: #FEFEFE;
   font-family: "DubaiW23", Helvetica, sans-serif;
   overflow: hidden;
-  color: #e1e0e5;
+  color: #1b1a1f;
   padding-top: 47px;
+}
+
+body.dark {
+  background: #1b1a1f;
+  color: #e1e0e5;
 }
 
 ul {
@@ -75,8 +80,12 @@ header {
   position: fixed;
   top: 0;
   left: 0;
-  background: #0e100f;
+  background: #E8E8E8;
   z-index: 9999;
+}
+
+.dark header {
+  background: #0e100f;
 }
 
 .app-name,
@@ -105,13 +114,17 @@ header {
 
 .device-selector span {
   display: inline-block;
-  border: 1px solid #222;
+  border: 1px solid #888;
   min-width: 250px;
   border-radius: 3px;
   padding: 0 20px;
   position: relative;
   user-select: none;
   font-weight: 300;
+}
+
+.dark .device-selector span {
+  border-color: #222;
 }
 
 .device-selector span:after {
@@ -122,9 +135,13 @@ header {
   position: absolute;
   top: 5px;
   right: 10px;
-  border-left: 2px solid #FFF;
-  border-bottom: 2px solid #FFF;
+  border-left: 2px solid #1b1a1f;
+  border-bottom: 2px solid #1b1a1f;
   transform: rotate(-45deg);
+}
+
+.dark .device-selector span:after {
+  border-color: #FFF;
 }
 
 .device-selector ul {
@@ -133,11 +150,16 @@ header {
   top: 45px;
   left: 50%;
   transform: translate3d(-50%,0,0);
-  background: #0e100f;
+  background: #E8E8E8;
   border-radius: 5px;
-  border: 1px solid #222;
+  border: 1px solid #CCC;
   visibility: hidden;
   opacity: 0;
+}
+
+.dark .device-selector ul {
+  background: #0e100f;
+  border-color: #222;
 }
 
 .device-selector ul.open {
@@ -151,18 +173,26 @@ header {
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-bottom: 8px solid #0e100f;
+  border-bottom: 8px solid #E8E8E8;
   position: absolute;
   top: -8px;
   left: 50%;
   transform: translateX(-50%);
 }
 
+.dark .device-selector ul:before, .dark .device-selector ul:after {
+  border-bottom-color: #0e100f;
+}
+
 .device-selector ul:before {
   border-left-width: 9px;
   border-right-width: 9px;
-  border-bottom: 9px solid #222;
+  border-bottom: 9px solid #CCC;
   top: -9px;
+}
+
+.dark .device-selector ul:before {
+  border-bottom-color: #222;
 }
 
 .device-selector ul li {
@@ -238,11 +268,28 @@ section ul li span {
   transition: color 0.3s ease-out;
 }
 
-section img {
+section svg {
   width: 100%;
   height: 100%;
   max-width: 50px;
   max-height: 50px;
+}
+
+section svg path {
+  fill: #888;
+  transition: all 0.3s ease-out;
+}
+
+section .action:hover svg path {
+  fill: #555;
+}
+
+.dark section svg path {
+  fill: #111;
+}
+
+.dark section .action:hover svg path {
+  fill: #000;
 }
 
 .action {
@@ -254,6 +301,10 @@ section img {
 }
 
 .action:hover + span {
+  color: rgb(0,0,0);
+}
+
+.dark .action:hover + span {
   color: rgb(151, 151, 151);
 }
 
